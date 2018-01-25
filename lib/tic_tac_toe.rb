@@ -60,4 +60,22 @@ class TicTacToe
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
+
+  def won?
+    winner = nil
+    WIN_COMBINATIONS.any? do |combination|
+      value = @board[combination[0]]
+      winner = combination if position_taken?(combination[0]) && combination.all?{|position| @board[position] == value}
+    end
+    winner
+  end
+
+  def full?(board)
+    board.all?{|cell| cell == "X" || cell == "O"}
+  end
+  
+  def draw?(board)
+    !won?(board) && full?(board) 
+  end
+
 end
