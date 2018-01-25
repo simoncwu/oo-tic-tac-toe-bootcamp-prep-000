@@ -84,7 +84,7 @@ class TicTacToe
 
   def winner
     winning_combination = won?
-    winning_combination.nil? ? nil : board[winning_combination[0]] 
+    winning_combination.nil? ? nil : @board[winning_combination[0]] 
   end
 
 end
