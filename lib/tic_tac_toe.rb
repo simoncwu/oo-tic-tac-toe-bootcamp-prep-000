@@ -86,5 +86,14 @@ class TicTacToe
     winning_combination = won?
     winning_combination.nil? ? nil : @board[winning_combination[0]] 
   end
+  
+  def play
+    until over?
+      turn
+    end
+    
+    w = winner
+    puts w.nil? ? "Cat's Game!" : "Congratulations #{w}!"
+  end
 
 end
