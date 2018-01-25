@@ -77,5 +77,14 @@ class TicTacToe
   def draw?
     !won? && full?
   end
+  
+  def over?
+    won? || draw? || full?
+  end
+
+  def winner
+    winning_combination = won?
+    winning_combination.nil? ? nil : board[winning_combination[0]] 
+  end
 
 end
