@@ -70,12 +70,12 @@ class TicTacToe
     winner
   end
 
-  def full?(board)
-    board.all?{|cell| cell == "X" || cell == "O"}
+  def full?
+    @board.all?{|cell| cell == "X" || cell == "O"}
   end
   
-  def draw?(board)
-    !won?(board) && full?(board) 
+  def draw?
+    !won? && full?
   end
 
 end
